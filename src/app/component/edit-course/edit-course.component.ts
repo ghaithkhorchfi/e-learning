@@ -17,18 +17,20 @@ export class EditCourseComponent implements OnInit {
 
   ngOnInit() {
     this.courseForm=this.formBuilder.group({
-      Name:[''],
+      name:[''],
       detail:[''],
-      teacher:[''],
-      Hour:['']
+      link:['']
     })
     this.id=this.activateRoute.snapshot.paramMap.get('id')
     console.log(this.id);
     
-    this.course=this.courseService.getById(this.id)
+   this.courseService.getById(this.id).subscribe(data=>{
+     this.course=data
+   });
+  
   }
   editCourse(){
-    this.courseService.editCourse(this.course);
+    this.courseService.editCourse(this.course).subscribe();
     this.route.navigate(['admin'])
   }
   

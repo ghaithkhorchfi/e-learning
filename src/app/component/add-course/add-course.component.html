@@ -71,16 +71,19 @@
                 <div class="card-body">
                   <form role="form" #courseForm="ngForm" (ngSubmit)="addCourse()" >
                     <div class="input-group input-group-outline mb-3">
-                      <input type="text" class="form-control" [(ngModel)]="course.Name" [ngModelOptions]="{standalone: true}" placeholder="course name"   >
+                      <input type="text" class="form-control" [(ngModel)]="course.name" [ngModelOptions]="{standalone: true}" placeholder="course name"   >
                     </div>
                     <div class="input-group input-group-outline mb-3">
                       <input type="text" class="form-control" [(ngModel)]="course.detail" [ngModelOptions]="{standalone: true}" placeholder="detail" >
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <input type="text" class="form-control" [(ngModel)]="course.teacher" [ngModelOptions]="{standalone: true}" placeholder="teacher" >
+                      <input type="text" class="form-control" [(ngModel)]="course.teach" [ngModelOptions]="{standalone: true}" placeholder="teacher" >
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <input type="number" class="form-control" [(ngModel)]="course.Hour" [ngModelOptions]="{standalone: true}" placeholder="Hour" >
+                      <input type="text" class="form-control" [(ngModel)]="course.hour" [ngModelOptions]="{standalone: true}" placeholder="Hour" >
+                    </div>
+                    <div class="input-group input-group-outline mb-3">
+                      <input type="text" class="form-control" [(ngModel)]="course.link" [ngModelOptions]="{standalone: true}" placeholder="link" >
                     </div>
                       <button  class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Add Course</button>
                   </form>

@@ -19,17 +19,20 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit() {
     this.editForm=this.formBuilder.group({
-      Name:[''],
+      name:[''],
       role:[''],
       email:[''],
       password:[''],
     })
     this.id=this.activateRoute.snapshot.paramMap.get('id');
-    this.user=this.userService.getById(this.id);
+    this.user=this.userService.getById(this.id).subscribe(data=>this.user=data);
   }
   edit(){
     console.log('user',this.user);
-    this.userService.editUser(this.user)
+    this.userService.editUser(this.user).subscribe(data=>{
+      console.log(data);
+      
+    })
     this.route.navigate(['admin'])
        
   }

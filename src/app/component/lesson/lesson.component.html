@@ -1,8 +1,36 @@
 <div class="course">
-    <div class="course_image"><img src="assets/images/course_2.jpg" alt=""></div>
-    <div class="course_body">
-      <h3 class="course_title"><a href="course.html">{{cours.name}}</a></h3>
-      <div class="course_teacher">{{cours.punshline}}</div>
-      <div class="course_text">
-        <p>Lorem ipsum dolor sit amet, consectetur adipi elitsed do eiusmod tempor</p>
+  <div class="course_image">
+    <img src="assets/images/course_2.jpg" alt="" />
+  </div>
+  <div class="course_body">
+    <h3 class="course_title">
+      <a href="course.html">{{ cours.name }}</a>
+    </h3>
+    <div class="course_teacher">{{ cours.detail }}</div>
+    <div class="course_text">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipi elitsed do eiusmod tempor
+      </p>
+    </div>
+  </div>
+  <div class="course_footer">
+    <div
+      class="course_footer_content d-flex flex-row align-items-center justify-content-start"
+    >
+      <div class="course_info">
+        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+        <span>20 Student</span>
       </div>
+      <div class="course_info">
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <span>5 Ratings</span>
+      </div>
+      <div class="course_price ml-auto">Free</div>
+    </div>
+    <div>
+      <button class="btn btn-outline-info" (click)="inscrire()">
+        Inscrire
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StudentService } from 'src/app/Service/student.service';
+import { TeacherService } from 'src/app/Service/teacher.service';
 import { UserService } from 'src/app/Service/user.service';
 
 @Component({
@@ -10,17 +12,30 @@ import { UserService } from 'src/app/Service/user.service';
 export class AdminStudentComponent implements OnInit {
   list:any=[]
 
-  constructor(private userService:UserService,private route:Router) { }
+  constructor(private studentService:StudentService,private route:Router) { }
 
   ngOnInit() {
-    this.list=this.userService.getAllStudent()
+   this.studentService.getAlluserlist().subscribe(data=>{
+    let t:any=[]
+    t=data
+    this.list=t.filter(e=>e.role='student')
+   })
   }
   edit(id:any){
     this.route.navigate([`edituser/${id}`])    
   }
   delete(id:any){
-    this.userService.delete(id);
-    this.list=this.userService.getAlluserlist()
+    console.log(id);
+    this.studentService.delete(id).subscribe(()=>{
+      this.studentService.getAlluserlist().subscribe(data=>{
+        let t:any=[]
+        t=data
+        this.list=t.filter(e=>e.role='student')
+      })
+    }
+      
+    );
+
   }
 
 }

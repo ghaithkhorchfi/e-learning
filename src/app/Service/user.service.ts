@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {users} from '../data/user';
 
@@ -5,55 +6,43 @@ import {users} from '../data/user';
   providedIn: 'root'
 })
 export class UserService {
+  userUrl:string="http://localhost:8082/api/users";
 
-  userlist:any= users
+  constructor(private httpClient:HttpClient) { }
 
-  constructor() { }
+  addUser(user:any){
+    console.log(user);
+    
+    return this.httpClient.post(this.userUrl,user);
+  
+  }
+
   getAlluserlist(){
-    return this.userlist
+    return this.httpClient.get(this.userUrl)
   }
   editUser(user:any){
-    for( let i=0;i<this.userlist.length;i++ ){
-      if (this.userlist[i].id===user.id) {
-       this.userlist[i]= user
-       console.log(this.userlist[i]);
-       
-      }
-        
-      }
+
     
     console.log(user);
+    return this.httpClient.put(`${this.userUrl}/${user.id}`,user)
     
   }
   delete(id:number){
-    let list=[]
-    for( let i=0;i<this.userlist.length;i++ ){
-      if (this.userlist[i].id!==id) {
-      list.push(this.userlist[i])
-      }
-        
-      }
-      this.userlist=list
+
+     return this.httpClient.delete(`${this.userUrl}/${id}`)
 
   }
 getById(id:any){
-  for( let i=0;i<this.userlist.length;i++ ){
-    if (this.userlist[i].id==id) {
-    return(this.userlist[i])
-    }
-      
-    }
 
-}
-addUser(user:any){
-  this.userlist.push(user);
+  return this.httpClient.get(`${this.userUrl}/${id}`)
 
-}
-getAllTeacher(){
-  return this.userlist.filter((e)=>e.role=='teacher')
 }
 getAllStudent(){
-  return this.userlist.filter((e)=>e.role=='student')
+  return [];
 }
+getAllTeacher(){
+  return [];
+}
+
 
 }

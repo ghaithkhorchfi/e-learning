@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseService } from 'src/app/Service/course.service';
 
 @Component({
   selector: 'app-course',
@@ -9,13 +10,15 @@ export class CourseComponent implements OnInit {
   lesson:any=[];
 
 
-  constructor() { }
+  constructor(private courseService:CourseService) { }
 
   ngOnInit() {
-    this.lesson=[{name:"katiba", punshline:"3andi 3azimaw el fekrabech ta5tef"},
-    {name:"farzit", punshline:"ya bey3etni soum maw fibelek"},
-    {name:"katiba", punshline:"3andi 3azimaw el fekrabech ta5tef"},
-    {name:"psyco M", punshline:"3aychin f 3alem des image mozayfa k sarab"},{name:"katiba", punshline:"e5dem taw rabi yaatik"}];
+    this.courseService.getAllCourses().subscribe(data=>{
+      this.lesson=data
+      console.log(this.lesson);
+      
+    })
+  
   }
 
 }

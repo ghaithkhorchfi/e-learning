@@ -34,6 +34,7 @@ import { DhashboardTeacherComponent } from './component/dhashboard-teacher/dhash
 import { DhashboardStudentComponent } from './component/dhashboard-student/dhashboard-student.component';
 import { EditUserComponent } from './component/edit-user/edit-user.component';
 import { AuthGuard } from './guard/auth.guard';
+import {HttpClientModule} from "@angular/common/http"
 
 @NgModule({
   declarations: [
@@ -71,7 +72,7 @@ import { AuthGuard } from './guard/auth.guard';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,ReactiveFormsModule
+    FormsModule,ReactiveFormsModule,HttpClientModule
   ],
   providers: [ AuthGuard],
   bootstrap: [AppComponent]

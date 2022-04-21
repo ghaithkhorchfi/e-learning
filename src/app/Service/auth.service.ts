@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { users } from '../data/user';
 
@@ -6,27 +7,12 @@ import { users } from '../data/user';
 })
 export class AuthService {
   userlist:any=users
+  userUrl:string="http://localhost:8082/api/users"
 
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
 
   login(user:any){
-    for (let i = 0; i < this.userlist.length; i++) {
-      if (user.email==this.userlist[i].email) {
-        if(user.password==this.userlist[i].password){
-          localStorage.setItem('user',JSON.stringify(user))
-          localStorage.setItem('JWT','token')
-          return 'ok'
-        }
-        else{
-          return 'password incorrect'
-        }
-
-        
-      }
-      else{ return 'email invalid'}
-      
-    }
-
+    return this.httpClient.get(`${this.userUrl}/info/${user.email}/${user.password}`)
 
   }
   loggedIn(){

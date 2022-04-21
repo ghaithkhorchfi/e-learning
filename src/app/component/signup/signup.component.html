@@ -78,47 +78,46 @@
                             <div class="card-body">
                                 <form role="form" [formGroup]='signUp'>
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="form-label">Name</label>
-                                        <input type="text" class="form-control" formControlName="Name">
+                                       
+                                        <input type="text" class="form-control" formControlName="name" placeholder="name" >
                                     </div>
-                                    <div *ngIf="signUp.controls['Name'].invalid&&(signUp.controls['Name'].touched||
-                                    signUp.controls['Name'].dirty)">
-                                        <div *ngIf="signUp.controls['Name'].errors.minlength" style="color: crimson;">
+                                    <div *ngIf="signUp.controls['name'].invalid&&(signUp.controls['name'].touched||
+                                    signUp.controls['name'].dirty)">
+                                        <div *ngIf="signUp.controls['name'].errors.minlength" style="color: crimson;">
                                             Min length 8
                                         </div>
-                                        <div *ngIf="signUp.controls['Name'].errors.required" style="color: crimson;">
+                                        <div *ngIf="signUp.controls['name'].errors.required" style="color: crimson;">
                                             name is required
                                         </div>
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" formControlName="Email">
+                                      
+                                        <input type="email" class="form-control" formControlName="email" placeholder="email">
                                     </div>
-                                    <div *ngIf="signUp.controls['Email'].invalid&&(signUp.controls['Email'].touched||
-                                    signUp.controls['Email'].dirty)">
-                                        <div *ngIf="signUp.controls['Email'].errors.email" style="color: crimson;">
+                                    <div *ngIf="signUp.controls['email'].invalid&&(signUp.controls['email'].touched||
+                                    signUp.controls['email'].dirty)">
+                                        <div *ngIf="signUp.controls['email'].errors.email" style="color: crimson;">
                                             write a valid mail please!!
                                         </div>
-                                        <div *ngIf="signUp.controls['Email'].errors.required" style="color: crimson;">
+                                        <div *ngIf="signUp.controls['email'].errors.required" style="color: crimson;">
                                             Email is required
                                         </div>
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="form-label">Password</label>
-                                        <input type="password" class="form-control" formControlName="Password">
+                                        
+                                        <input type="password" class="form-control" formControlName="password" placeholder="password">
                                     </div>
-                                    <div *ngIf="signUp.controls['Password'].invalid&&(signUp.controls['Password'].touched||
-                                    signUp.controls['Password'].dirty)">
-                                        <div *ngIf="signUp.controls['Password'].errors.minlength" style="color: crimson;">
+                                    <div *ngIf="signUp.controls['password'].invalid&&(signUp.controls['password'].touched||
+                                    signUp.controls['password'].dirty)">
+                                        <div *ngIf="signUp.controls['password'].errors.minlength" style="color: crimson;">
                                             Min length 10
                                         </div>
-                                        <div *ngIf="signUp.controls['Password'].errors.required" style="color: crimson;">
-                                            Password is required
+                                        <div *ngIf="signUp.controls['password'].errors.required" style="color: crimson;">
+                                            password is required
                                         </div>
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="form-label">Confirme Password</label>
-                                        <input type="password" class="form-control" formControlName="pwd">
+                                        <input type="password" class="form-control" formControlName="pwd" placeholder="confirme password" >
                                     </div>
                                     <div *ngIf="signUp.controls['pwd'].invalid&&(signUp.controls['pwd'].touched||
                                     signUp.controls['pwd'].dirty)">
@@ -130,13 +129,9 @@
                                         </div>
                                         <div *ngIf="signUp.controls['pwd'].errors.confirm" style="color: crimson;" >please write password correctly</div>
                                     </div>
-                                    <div >
-                                        <select class="custom-select" aria-label="Default select example"  formControlName="role" >
-                                            <label class="form-label">Role</label>
-                                            <option selected >sign up as </option>
-                                            <option value="student">Student</option>
-                                            <option value="teacher">Teacher</option>
-                                          </select>
+                                    <div class="input-group input-group-outline mb-3">
+                                        
+                                        <input type="text" class="form-control" formControlName="role" placeholder="role">
                                     </div>
                                     <div class="text-center">
                                         <button type="button"

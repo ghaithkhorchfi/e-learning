@@ -25,15 +25,17 @@ export class SignComponent implements OnInit {
   }
   onSubmit(){
     console.log('info',this.user);
-    this.msg=this.authService.login(this.user)
-    if (this.msg=='ok') {
-      this.token=localStorage.getItem('JWT')
-      console.log(this.token);
-      this.route.navigate(['admin']);  
-            
-    }
-    else{ console.log(this.msg);
-    }
+    let p:any;
+    this.authService.login(this.user).subscribe((data)=>{
+      p=data
+      if (p) {
+        localStorage.setItem("user",JSON.stringify(p))
+        localStorage.setItem("JWT","token")
+        
+      }
+      console.log(data);
+      
+    })
     
     
   }

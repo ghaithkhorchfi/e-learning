@@ -13,15 +13,25 @@ export class AdminCourseComponent implements OnInit {
   constructor(private Course:CourseService,private route:Router) { }
 
   ngOnInit() {
-   this.list= this.Course.getAllCourses()
+    this.Course.getAllCourses().subscribe((data)=>{
+      console.log(data);
+      
+      this.list=data});
+    
+
   }
   edit(id:any){
     this.route.navigate([`editcourse/${id}`])
 
   }
-  delete(id:number){
-    this.Course.delete(id);
-    this.list= this.Course.getAllCourses()
+  delete(id:any){
+    console.log(id);
+    this.Course.delete(id).subscribe(data=>{
+      console.log('deleted');
+      this.Course.getAllCourses().subscribe((data)=>{ 
+        this.list=data});
+      
+    });
   }
 
 }

@@ -12,8 +12,7 @@ export class DhashboardTeacherComponent implements OnInit {
   constructor(private courseService:CourseService) { }
 
   ngOnInit() {
-    this.courses=this.courseService.getByUserId(this.id)
-    console.log(this.courses);
+
     
    
     console.log(this.id);

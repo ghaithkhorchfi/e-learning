@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/Service/user.service';
+import { TeacherService } from 'src/app/Service/teacher.service';
 
 @Component({
   selector: 'app-admin-teacher',
@@ -10,10 +10,14 @@ import { UserService } from 'src/app/Service/user.service';
 export class AdminTeacherComponent implements OnInit {
    list:any=[]
 
-  constructor(private userService:UserService, private route:Router ) { }
+  constructor(private teacherService:TeacherService, private route:Router ) { }
 
   ngOnInit() {
-    this.list=this.userService.getAllTeacher()
+    this.teacherService.getAllteachers().subscribe(data=>{
+      let t:any=[]
+      t=data
+      this.list=t.filter(e=>e.role='teacher')
+    })
     console.log(this.list);
     
     
@@ -22,8 +26,13 @@ export class AdminTeacherComponent implements OnInit {
     this.route.navigate([`edituser/${id}`])    
   }
   delete(id:any){
-    this.userService.delete(id);
-    this.list=this.userService.getAlluserlist()
+    this.teacherService.delete(id).subscribe(()=>{
+      this.teacherService.getAllteachers().subscribe(data=>{
+        let t:any=[]
+        t=data
+        this.list=t.filter(e=>e.role='teacher')
+      })
+    })
   }
 
 }
