@@ -34,7 +34,12 @@ import { DhashboardTeacherComponent } from './component/dhashboard-teacher/dhash
 import { DhashboardStudentComponent } from './component/dhashboard-student/dhashboard-student.component';
 import { EditUserComponent } from './component/edit-user/edit-user.component';
 import { AuthGuard } from './guard/auth.guard';
-import {HttpClientModule} from "@angular/common/http"
+import {HttpClientModule} from "@angular/common/http";
+import { HeaderrComponent } from './component/headerr/headerr.component';
+import { QuestionComponent } from './component/question/question.component';
+import { WelcomeComponent } from './component/welcome/welcome.component'
+import { CommonModule } from '@angular/common';
+import { ChangeBgDirective } from './change-bg.directive';
 
 @NgModule({
   declarations: [
@@ -67,12 +72,19 @@ import {HttpClientModule} from "@angular/common/http"
     EditCourseComponent,
     DhashboardTeacherComponent,
     DhashboardStudentComponent,
-    EditUserComponent
+    EditUserComponent,
+    HeaderrComponent,
+    QuestionComponent,
+    WelcomeComponent,
+    ChangeBgDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,ReactiveFormsModule,HttpClientModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    CommonModule
   ],
   providers: [ AuthGuard],
   bootstrap: [AppComponent]

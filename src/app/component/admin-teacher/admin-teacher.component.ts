@@ -16,7 +16,7 @@ export class AdminTeacherComponent implements OnInit {
     this.teacherService.getAllteachers().subscribe(data=>{
       let t:any=[]
       t=data
-      this.list=t.filter(e=>e.role='teacher')
+      this.list=t.filter(e=>e.role=='teacher')
     })
     console.log(this.list);
     

@@ -18,7 +18,7 @@ export class AdminStudentComponent implements OnInit {
    this.studentService.getAlluserlist().subscribe(data=>{
     let t:any=[]
     t=data
-    this.list=t.filter(e=>e.role='student')
+    this.list=t.filter(e=>e.role=='student')
    })
   }
   edit(id:any){
