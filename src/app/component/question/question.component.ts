@@ -25,8 +25,6 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit() {
     this.name = localStorage.getItem("name")!;
-    this.index = localStorage.getItem("index");
-    console.log(this.index);
     this.getAllQuestions();
     this.startCounter();
     
@@ -38,13 +36,8 @@ export class QuestionComponent implements OnInit {
     .subscribe(res => {
       this.questionList = res;
       console.log(this.questionList);
-      for (var i = 0; i < this.questionList.length; i++) {
-        if (this.questionList[i].courseId == this.index) {
-          this.questionList1[j] = this.questionList[i];
-          j++;
-        }
-      }
-      console.log(this.questionList1.length);
+      this.questionList1 = JSON.parse(localStorage.getItem("questionList1"));
+      console.log(this.questionList1); 
     })
     
   }
