@@ -20,6 +20,7 @@ export class WelcomeComponent implements OnInit {
   constructor(private CourseService: CourseService, private QuestionService: QuestionService) { }
 
   ngOnInit() {
+    window.localStorage.removeItem("questionList1")
     this.getAllCourses();
     this.getAllQuestions();
    
