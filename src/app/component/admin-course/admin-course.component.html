@@ -1,27 +1,50 @@
-
-
 <div class="card-body px-0 pb-2">
   <div class="table-responsive p-0">
     <table class="table align-items-center justify-content-center mb-0">
       <thead>
         <tr>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Logo</th>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name</th>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">detail</th>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Teacher
+          <th
+            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+          >
+            Logo
           </th>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Action
+          <th
+            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+          >
+            ID
+          </th>
+          <th
+            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+          >
+            Name
+          </th>
+          <th
+            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+          >
+            detail
+          </th>
+          <th
+            class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2"
+          >
+            Teacher
+          </th>
+          <th
+            class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2"
+          >
+            Action
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let i of list" >
+        <tr *ngFor="let i of list">
           <td>
             <div class="d-flex px-2">
               <div>
-                <img src="assets/assets/img/small-logos/github.svg" class="avatar avatar-sm rounded-circle me-2"
-                  alt="spotify">
+                <img
+                  src="assets/assets/img/small-logos/github.svg"
+                  class="avatar avatar-sm rounded-circle me-2"
+                  alt="spotify"
+                />
               </div>
               <div class="my-auto">
                 <h6 class="mb-0 text-sm">Logo</h6>
@@ -29,23 +52,37 @@
             </div>
           </td>
           <td>
-            <p class="text-sm font-weight-bold mb-0">{{i.id}}</p>
+            <p class="text-sm font-weight-bold mb-0">{{ i.id }}</p>
           </td>
           <td>
-            <p class="text-sm font-weight-bold mb-0">{{i.name}}</p>
+            <p class="text-sm font-weight-bold mb-0">{{ i.name }}</p>
           </td>
           <td>
-            <span class="text-xs font-weight-bold">{{i.detail}}</span>
+            <span class="text-xs font-weight-bold">{{ i.detail }}</span>
           </td>
           <td>
-            <span class="text-xs font-weight-bold">{{i.teach}}</span>
+            <span class="text-xs font-weight-bold">{{ i.teach }}</span>
           </td>
           <td class="align-middle text-center">
             <div class="d-flex align-items-center justify-content-center">
               <div>
-                <button type="button" class="btn btn-info " (click)="edit(i.id)"  >Edit</button>
-                <button type="button" class="btn btn-success"(click)="display(i.id)" >Display</button>
-                <button type="button" class="btn btn-danger" (click)="delete(i.id)" >Delete</button>
+                <button type="button" class="btn btn-info" (click)="edit(i.id)">
+                  Edit
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  (click)="display(i.id)"
+                >
+                  Display
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  (click)="delete(i.id)"
+                >
+                  Delete
+                </button>
               </div>
             </div>
           </td>

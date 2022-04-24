@@ -1,56 +1,91 @@
 <div class="card-body px-0 pb-2">
-    <div class="table-responsive p-0">
-        <table class="table align-items-center justify-content-center mb-0">
-            <thead>
-                <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">detail</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                        Teacher
-                    </th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                        Hour
-                    </th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                        teacher Id
-                    </th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                        Action
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let i of courses">
-                    <td>
-                        <p class="text-sm font-weight-bold mb-0">{{i.Name}}</p>
-                    </td>
-                    <td>
-                        <p class="text-sm font-weight-bold mb-0">{{i.Name}}</p>
-                    </td>
-                    <td>
-                        <span class="text-xs font-weight-bold">{{i.detail}}</span>
-                    </td>
-                    <td>
-                        <span class="text-xs font-weight-bold">{{i.teacher}}</span>
-                    </td>
-                    <td>
-                        <span class="text-xs font-weight-bold">{{i.Hour}}</span>
-                    </td>
-                    <td>
-                        <span class="text-xs font-weight-bold">{{i.idUser}}</span>
-                    </td>
-                    <td class="align-middle text-center">
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div>
-                                <button type="button" class="btn btn-info " (click)="edit(i.id)">Edit</button>
-                                <button type="button" class="btn btn-success" (click)="display(i.id)">Display</button>
-                                <button type="button" class="btn btn-danger" (click)="delete(i.id)">Delete</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  <div class="table-responsive p-0">
+    <table class="table align-items-center justify-content-center mb-0">
+      <thead>
+        <tr>
+          <th
+            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+          >
+            ID
+          </th>
+          <th
+            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+          >
+            Name
+          </th>
+          <th
+            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+          >
+            detail
+          </th>
+          <th
+            class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2"
+          >
+            Teacher
+          </th>
+          <th
+            class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2"
+          >
+            Link
+          </th>
+          <th
+            class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2"
+          >
+            teacher Id
+          </th>
+          <th
+            class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2"
+          >
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of courses">
+          <td>
+            <p class="text-sm font-weight-bold mb-0">{{ i.id }}</p>
+          </td>
+          <td>
+            <p class="text-sm font-weight-bold mb-0">{{ i.name }}</p>
+          </td>
+          <td>
+            <span class="text-xs font-weight-bold">{{ i.detail }}</span>
+          </td>
+          <td>
+            <span class="text-xs font-weight-bold">{{ teacher.name }}</span>
+          </td>
+          <td>
+            <span class="text-xs font-weight-bold">{{ i.link }}</span>
+          </td>
+          <td>
+            <span class="text-xs font-weight-bold">{{ teacher.id }}</span>
+          </td>
+          <td class="align-middle text-center">
+            <div class="d-flex align-items-center justify-content-center">
+              <div>
+                <button type="button" class="btn btn-info" (click)="edit(i.id)">
+                  Edit
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  (click)="display(i.id)"
+                >
+                  Display
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  (click)="delete(i.id)"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-info" (click)="goto()">Add Course</button>
+  </div>
 </div>

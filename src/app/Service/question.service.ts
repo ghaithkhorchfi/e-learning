@@ -14,7 +14,7 @@ export class QuestionService {
 
 
   public getQuestions(): Observable<Question[]> {
-    return this.http.get<Question[]>(`${this.apiServerUrl}/questions/findAll`)
+    return this.http.get<Question[]>(`${this.apiServerUrl}/api/questions/findAll`)
   }
 }
 

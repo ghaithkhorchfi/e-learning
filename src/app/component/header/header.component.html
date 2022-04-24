@@ -1,12 +1,13 @@
 <header class="header">
-
   <!-- Top Bar -->
   <div class="top_bar">
     <div class="top_bar_container">
       <div class="container">
         <div class="row">
           <div class="col">
-            <div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+            <div
+              class="top_bar_content d-flex flex-row align-items-center justify-content-start"
+            >
               <ul class="top_bar_contact_list">
                 <li>
                   <div class="question">Have any questions?</div>
@@ -21,7 +22,9 @@
                 </li>
               </ul>
               <div class="top_bar_login ml-auto">
-                <div class="login_button"><a href="#">Register or Login</a></div>
+                <div class="login_button">
+                  <a href="#">Register or Login</a>
+                </div>
               </div>
             </div>
           </div>
@@ -35,31 +38,38 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <div class="header_content d-flex flex-row align-items-center justify-content-start">
+          <div
+            class="header_content d-flex flex-row align-items-center justify-content-start"
+          >
             <div class="logo_container">
               <a href="#">
-                <div class="logo_text">Unic<span>at</span></div>
+                <div class="logo_text">Educ<span>IT</span></div>
               </a>
             </div>
             <nav class="main_nav_contaner ml-auto">
               <ul class="main_nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="active"><a routerLink="">Home</a></li>
+                <li><a routerLink="courses">Courses</a></li>
+                <li *ngIf="isLogged()"><a routerLink="signup">SignUP</a></li>
+                <li *ngIf="isLogged()"><a routerLink="sign">Login</a></li>
+                <li *ngIf="!isLogged()">
+                  <a routerLink="sign" (click)="logOut()">LogOut</a>
+                </li>
+                <li><a (click)="goto()">dashbord</a></li>
               </ul>
-              <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
+              <div class="search_button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </div>
 
               <!-- Hamburger -->
 
-              <div class="shopping_cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+              <div class="shopping_cart">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              </div>
               <div class="hamburger menu_mm">
                 <i class="fa fa-bars menu_mm" aria-hidden="true"></i>
               </div>
             </nav>
-
           </div>
         </div>
       </div>
@@ -71,10 +81,19 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <div class="header_search_content d-flex flex-row align-items-center justify-content-end">
+          <div
+            class="header_search_content d-flex flex-row align-items-center justify-content-end"
+          >
             <form action="#" class="header_search_form">
-              <input type="search" class="search_input" placeholder="Search" required="required">
-              <button class="header_search_button d-flex flex-column align-items-center justify-content-center">
+              <input
+                type="search"
+                class="search_input"
+                placeholder="Search"
+                required="required"
+              />
+              <button
+                class="header_search_button d-flex flex-column align-items-center justify-content-center"
+              >
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
             </form>
@@ -87,7 +106,9 @@
 
 <!-- Menu -->
 
-<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+<div
+  class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400"
+>
   <div class="menu_close_container">
     <div class="menu_close">
       <div></div>
@@ -96,8 +117,15 @@
   </div>
   <div class="search">
     <form action="#" class="header_search_form menu_mm">
-      <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
-      <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+      <input
+        type="search"
+        class="search_input menu_mm"
+        placeholder="Search"
+        required="required"
+      />
+      <button
+        class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm"
+      >
         <i class="fa fa-search menu_mm" aria-hidden="true"></i>
       </button>
     </form>
@@ -118,24 +146,37 @@
 
 <div class="home">
   <div class="home_slider_container">
-
     <!-- Home Slider -->
     <div class="owl-carousel owl-theme home_slider">
-
       <!-- Home Slider Item -->
       <div class="owl-item">
-        <div class="home_slider_background" style="background-image:url(assets/images/home_slider_1.jpg)"></div>
+        <div
+          class="home_slider_background"
+          style="background-image: url(assets/images/home_slider_1.jpg)"
+        ></div>
         <div class="home_slider_content">
           <div class="container">
             <div class="row">
               <div class="col text-center">
-                <div class="home_slider_title">The Premium System Education</div>
-                <div class="home_slider_subtitle">Future Of Education Technology</div>
+                <div class="home_slider_title">EducIT</div>
+                <div class="home_slider_subtitle">
+                  Future Of Education Technology
+                </div>
                 <div class="home_slider_form_container">
-                  <form action="#" id="home_search_form_1"
-                    class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between">
-                    <div class="d-flex flex-row align-items-center justify-content-start">
-                      <input type="search" class="home_search_input" placeholder="Keyword Search" required="required">
+                  <form
+                    action="#"
+                    id="home_search_form_1"
+                    class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between"
+                  >
+                    <div
+                      class="d-flex flex-row align-items-center justify-content-start"
+                    >
+                      <input
+                        type="search"
+                        class="home_search_input"
+                        placeholder="Keyword Search"
+                        required="required"
+                      />
                       <select class="dropdown_item_select home_search_input">
                         <option>Category Courses</option>
                         <option>Category</option>
@@ -147,7 +188,9 @@
                         <option>Price Type</option>
                       </select>
                     </div>
-                    <button type="submit" class="home_search_button">search</button>
+                    <button type="submit" class="home_search_button">
+                      search
+                    </button>
                   </form>
                 </div>
               </div>
@@ -158,18 +201,33 @@
 
       <!-- Home Slider Item -->
       <div class="owl-item">
-        <div class="home_slider_background" style="background-image:url(assets/images/home_slider_1.jpg)"></div>
+        <div
+          class="home_slider_background"
+          style="background-image: url(assets/images/home_slider_1.jpg)"
+        ></div>
         <div class="home_slider_content">
           <div class="container">
             <div class="row">
               <div class="col text-center">
-                <div class="home_slider_title">The Premium System Education</div>
-                <div class="home_slider_subtitle">Future Of Education Technology</div>
+                <div class="home_slider_title">EducIT</div>
+                <div class="home_slider_subtitle">
+                  Future Of Education Technology
+                </div>
                 <div class="home_slider_form_container">
-                  <form action="#" id="home_search_form_2"
-                    class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between">
-                    <div class="d-flex flex-row align-items-center justify-content-start">
-                      <input type="search" class="home_search_input" placeholder="Keyword Search" required="required">
+                  <form
+                    action="#"
+                    id="home_search_form_2"
+                    class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between"
+                  >
+                    <div
+                      class="d-flex flex-row align-items-center justify-content-start"
+                    >
+                      <input
+                        type="search"
+                        class="home_search_input"
+                        placeholder="Keyword Search"
+                        required="required"
+                      />
                       <select class="dropdown_item_select home_search_input">
                         <option>Category Courses</option>
                         <option>Category</option>
@@ -181,7 +239,9 @@
                         <option>Price Type</option>
                       </select>
                     </div>
-                    <button type="submit" class="home_search_button">search</button>
+                    <button type="submit" class="home_search_button">
+                      search
+                    </button>
                   </form>
                 </div>
               </div>
@@ -192,18 +252,33 @@
 
       <!-- Home Slider Item -->
       <div class="owl-item">
-        <div class="home_slider_background" style="background-image:url(assets/images/home_slider_1.jpg)"></div>
+        <div
+          class="home_slider_background"
+          style="background-image: url(assets/images/home_slider_1.jpg)"
+        ></div>
         <div class="home_slider_content">
           <div class="container">
             <div class="row">
               <div class="col text-center">
-                <div class="home_slider_title">The Premium System Education</div>
-                <div class="home_slider_subtitle">Future Of Education Technology</div>
+                <div class="home_slider_title">EducIT</div>
+                <div class="home_slider_subtitle">
+                  Future Of Education Technology
+                </div>
                 <div class="home_slider_form_container">
-                  <form action="#" id="home_search_form_3"
-                    class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between">
-                    <div class="d-flex flex-row align-items-center justify-content-start">
-                      <input type="search" class="home_search_input" placeholder="Keyword Search" required="required">
+                  <form
+                    action="#"
+                    id="home_search_form_3"
+                    class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between"
+                  >
+                    <div
+                      class="d-flex flex-row align-items-center justify-content-start"
+                    >
+                      <input
+                        type="search"
+                        class="home_search_input"
+                        placeholder="Keyword Search"
+                        required="required"
+                      />
                       <select class="dropdown_item_select home_search_input">
                         <option>Category Courses</option>
                         <option>Category</option>
@@ -215,7 +290,9 @@
                         <option>Price Type</option>
                       </select>
                     </div>
-                    <button type="submit" class="home_search_button">search</button>
+                    <button type="submit" class="home_search_button">
+                      search
+                    </button>
                   </form>
                 </div>
               </div>
@@ -223,12 +300,15 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
   <!-- Home Slider Nav -->
 
-  <div class="home_slider_nav home_slider_prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-  <div class="home_slider_nav home_slider_next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+  <div class="home_slider_nav home_slider_prev">
+    <i class="fa fa-angle-left" aria-hidden="true"></i>
+  </div>
+  <div class="home_slider_nav home_slider_next">
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+  </div>
 </div>

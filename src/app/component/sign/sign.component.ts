@@ -31,9 +31,13 @@ export class SignComponent implements OnInit {
       if (p) {
         localStorage.setItem("user",JSON.stringify(p))
         localStorage.setItem("JWT","token")
+        this.route.navigate([""])
         
       }
+      else{
       console.log(data);
+      alert("wrong information")}
+
       
     })
     

@@ -28,7 +28,11 @@ export class AddCourseComponent implements OnInit {
     this.course.teach=this.user
     console.log('course : ',this.course);
     this.courseService.addCourse(this.course).subscribe((data)=>{console.log(data);
-      this.router.navigate(['admin'])
+      if(this.user.role=="admin"){
+      this.router.navigate(['admin'])}
+      else if(this.user.role=="teacher"){
+        this.router.navigate(['adminteacher'])
+      }
     })
     
   }
